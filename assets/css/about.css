@@ -1,0 +1,469 @@
+
+/* Page Header */
+.page-header {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('../img/contact-bg.jpg') center/cover no-repeat;
+  color: #fff;
+  padding: 120px 0 80px;
+  
+  text-align: center;
+}
+
+.page-header__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb-item {
+  margin: 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.breadcrumb-item a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: #ff6600;
+  text-decoration: none;
+}
+
+.breadcrumb-item.active {
+  color: #ff6600;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '/';
+  margin-right: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+
+:root{
+  
+  --bg:#ffffff;
+  --card:#131a25cc;              /* glass card */
+  --brand:#f39c12;               /* amber */
+  --brand-2:#ffdd55;
+  --text:#e9eef6;
+  --muted:#b9c3d1;
+  --stroke:rgba(255,255,255,.12);
+}
+
+body{
+  background: radial-gradient(1200px 600px at 20% -10%, #1b2231 0%, #0f1115 55%);
+}
+
+.stats-wrap{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  max-width:1100px; 
+  margin:34px auto; 
+  padding:0 18px;
+  display:grid; 
+  gap:18px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+ :root{
+    --bg:#0f1115;
+    --card:#131a25cc;              /* glass card */
+    --brand:#f39c12;               /* amber */
+    --brand-2:#ffdd55;
+    --text:#e9eef6;
+    --muted:#b9c3d1;
+    --stroke:rgba(255,255,255,.12);
+  }
+
+  body{background: radial-gradient(1200px 600px at 20% -10%, #1b2231 0%, #0f1115 55%);}
+  .stats-wrap{
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--text);
+    max-width:1100px; margin:34px auto; padding:0 18px;
+
+    display:grid; gap:18px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  /* Subtle blueprint/grid texture behind boxes */
+  .stats-wrap::before{
+    content:"";
+    position:fixed; inset:0; z-index:-1;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(255,255,255,.05), transparent 40%),
+      linear-gradient(0deg, transparent 24%, rgba(255,255,255,.04) 25%, rgba(255,255,255,.04) 26%, transparent 27%),
+      linear-gradient(90deg, transparent 24%, rgba(255,255,255,.04) 25%, rgba(255,255,255,.04) 26%, transparent 27%);
+    background-size: 100% 100%, 28px 28px, 28px 28px;
+    pointer-events:none;
+  }
+
+  .stat-box{
+    position:relative;
+    padding:18px 16px 14px;
+    border-radius:14px;
+    background: linear-gradient(180deg, var(--card), color-mix(in srgb, var(--card) 80%, #0b111a 20%));
+    border:1px solid var(--stroke);
+    backdrop-filter: blur(6px);
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255,255,255,.05);
+    overflow:hidden;
+    isolation:isolate;
+  }
+
+  /* Corner notch + animated accent */
+  .stat-box::before{
+    content:"";
+    position:absolute; inset:0; z-index:-1;
+    background:
+      conic-gradient(from 180deg at 0% 0%, var(--brand) 0 25%, transparent 0 100%),
+      linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    -webkit-mask:
+      radial-gradient(10px at 10px 10px, transparent 98%, #000 100%) top left,
+      linear-gradient(#000,#000);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    animation: sweep 6s linear infinite;
+  }
+  @keyframes sweep{
+    0%   {opacity:.65; filter:hue-rotate(0deg)}
+    50%  {opacity:.25; filter:hue-rotate(20deg)}
+    100% {opacity:.65; filter:hue-rotate(0deg)}
+  }
+
+  .stat-top{ display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .icon{
+    width:38px; height:38px; border-radius:9px;
+    display:grid; place-items:center;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 60%, #fff 0%), var(--brand-2));
+    box-shadow: 0 6px 16px rgba(243,156,18,.35);
+    border:1px solid rgba(255,255,255,.25);
+  }
+  .icon svg{ width:20px; height:20px; fill:#0f1115 }
+
+  .stat-title{
+    font-size:1rem; letter-spacing:.2px; margin:0;
+  }
+
+  .progress{
+    position:relative;
+    height:10px; border-radius:999px; overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid var(--stroke);
+  }
+
+  /* The actual progress */
+  .bar{
+    --w: var(--val, 0%);
+    position:absolute; inset:0 auto 0 0; width:0; height:100%;
+    background:
+      linear-gradient(90deg, var(--brand), var(--brand-2));
+    box-shadow: 0 0 18px color-mix(in srgb, var(--brand) 40%, transparent);
+    animation: fill 1.1s cubic-bezier(.22,.61,.36,1) forwards;
+  }
+
+  /* soft glow highlight moving to the right */
+  .glow{
+    position:absolute; top:-30%; bottom:-30%; left:-30%;
+    width:40%;
+    background: radial-gradient(60% 80% at 50% 50%, rgba(255,255,255,.28), transparent 70%);
+    filter: blur(10px);
+    animation: glide 2.8s ease-in-out infinite;
+    pointer-events:none;
+  }
+  .stat-box{
+  position:relative;
+  padding:18px 16px 14px;
+  border-radius:14px;
+  background: linear-gradient(180deg, var(--card), color-mix(in srgb, var(--card) 80%, #0b111a 20%));
+  border:1px solid var(--stroke);
+  backdrop-filter: blur(6px);
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.18),   /* reduced from 0 10px 30px */
+    inset 0 1px 0 rgba(255,255,255,.04);
+  overflow:hidden;
+  isolation:isolate;
+}
+
+/* Icon box */
+.icon{
+  width:38px; height:38px; border-radius:9px;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 60%, #fff 0%), var(--brand-2));
+  box-shadow: 0 3px 8px rgba(243,156,18,.25);   /* lighter shadow */
+  border:1px solid rgba(255,255,255,.25);
+}
+
+/* Hover state */
+.stat-box:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+
+  @keyframes fill{
+    to { width: var(--w); }
+  }
+  @keyframes glide{
+    0%,100%{ transform: translateX(0); opacity:.4 }
+    50%    { transform: translateX(140%); opacity:.7 }
+  }
+
+  .stat-bottom{
+    margin-top:10px; display:flex; align-items:center; justify-content:space-between;
+  }
+  .stat-label{ color:var(--muted); font-size:.85rem; }
+  .stat-value{
+    font-weight:700;
+    background: linear-gradient(90deg, var(--brand-2), var(--brand));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 0 18px rgba(243,156,18,.15);
+  }
+
+  /* Hover lift */
+  .stat-box:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
+  }
+
+  /* Light mode quick swap (if you place the section on a white page) */
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f7f8fb; --text:#1c2330; --muted:#5c6b85; --card:#ffffffd9; --stroke:rgba(0,0,0,.06); }
+    body{ background:#f7f8fb; }
+    .icon svg{ fill:#111; }
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .bar, .glow, .stat-box::before{ animation: none !important; }
+  }
+
+  /* ===========================
+   ABOUT PAGE THEME (white + orange)
+   =========================== */
+.about-page {
+  background: linear-gradient(135deg, #ffffff, #fff7f0);
+  --bg:#ffffff;
+  --card:#fff7f0;
+  --brand:#ff6600;
+  --brand-2:#ff9e42;
+  --text:#1c1c1c;
+  --muted:#666;
+  --stroke:rgba(0,0,0,.08);
+}
+
+/* Page Header for About */
+.about-page .page-header {
+  background: linear-gradient(rgba(255, 102, 0, 0.85), rgba(255, 102, 0, 0.85)),
+              url('../img/contact-bg.jpg') center/cover no-repeat;
+  color: #fff;
+}
+
+/* Breadcrumb highlight */
+.about-page .breadcrumb-item a:hover,
+.about-page .breadcrumb-item.active {
+  color: var(--brand);
+}
+
+/* Cards */
+.about-page .stat-box {
+  background: linear-gradient(180deg, var(--card), #fff);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.15);
+}
+
+/* Icons */
+.about-page .icon {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  box-shadow: 0 3px 8px rgba(255, 102, 0, 0.3);
+}
+
+/* Progress values */
+.about-page .stat-value {
+  background: linear-gradient(90deg, var(--brand-2), var(--brand));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 30px 0;
+    background-color: #f8f9fa;
+}
+
+.stats-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: center;
+    min-width: 200px;
+    max-width: 23%;
+}
+
+.stat-box .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #ff8c00; /* Icon color */
+}
+
+.stat-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff8c00;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .stat-box {
+        min-width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-box {
+        min-width: 100%;
+    }
+}
+
+
+/* ============== Fix: Center icons, balance card heights ============== */
+
+/* Ensure parent wrap gives equal-height children */
+.stats-wrap {
+  display: flex !important;
+  gap: 24px !important;
+  justify-content: space-between !important;
+  align-items: stretch !important; /* equal heights */
+  flex-wrap: wrap !important;
+  box-sizing: border-box;
+}
+
+/* Make each card a column flexbox so we can control vertical spacing */
+.stat-box {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important; /* top block + footer spacing */
+  align-items: center !important;              /* center everything horizontally */
+  flex: 1 1 calc(25% - 24px) !important;
+  min-width: 220px !important;
+  min-height: 340px !important;               /* keeps cards visually equal */
+  padding: 22px 18px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08) !important;
+  box-sizing: border-box !important;
+  overflow: hidden;
+}
+
+/* stat-top becomes stacked and centered */
+.stat-top {
+  display: flex !important;
+  flex-direction: column !important; /* stacked: icon above title */
+  align-items: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  margin-bottom: 6px !important;
+}
+
+/* icon fixed square, centered, predictable size */
+.icon {
+  width: 64px !important;
+  height: 64px !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 32px !important;        /* emoji/icon size */
+  border-radius: 12px !important;
+  background: linear-gradient(135deg,#ffd47a,#ff8c00) !important;
+  color: #111 !important;
+  box-shadow: 0 6px 18px rgba(255,140,0,.12) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Title smaller and centered, no weird wrapping */
+.stat-title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #222 !important;
+  margin: 0 !important;
+  text-align: center !important;
+  line-height: 1.05 !important;
+  word-break: keep-all !important; /* reduce awkward wraps */
+}
+
+/* Value and label spacing */
+.stat-value {
+  font-size: 36px !important;
+  font-weight: 800 !important;
+  color: #ff8c00 !important;
+  margin: 12px 0 6px !important;
+  text-align: center !important;
+}
+
+.stat-label {
+  color: #777 !important;
+  font-size: 14px !important;
+  text-align: center !important;
+  margin: 0 !important;
+  padding-bottom: 6px;
+}
+
+/* If cards still look too tall, reduce min-height here */
+@media (max-width: 1200px) {
+  .stat-box { min-height: 320px !important; }
+}
+
+/* Responsiveness: two across on medium, stacked on small */
+@media (max-width: 992px) {
+  .stat-box { flex: 1 1 calc(50% - 24px) !important; min-height: 300px !important; }
+}
+
+@media (max-width: 600px) {
+  .stats-wrap { flex-direction: column; align-items: center; gap: 18px; }
+  .stat-box { width: 92% !important; flex: none !important; min-height: auto !important; padding: 18px !important; }
+  .icon { width: 52px !important; height: 52px !important; font-size: 26px !important; }
+  .stat-title { font-size: 17px !important; }
+  .stat-value { font-size: 32px !important; }
+}
